@@ -1,0 +1,70 @@
+{
+    "id": "anycubic_plus",
+    "version": 2,
+    "name": "Anycubic Linear Plus",
+    "inherits": "fdmprinter",
+    "metadata": {
+        "visible": true,
+        "author": "J Harris",
+        "manufacturer": "Other",
+        "category": "Other",
+        "file_formats": "text/x-gcode",
+        "icon": "icon_ultimaker2",
+        "platform": "kossel_platform.stl"
+    },
+
+    "overrides": {         "machine_heated_bed": {
+            "default_value": true
+        },
+        "machine_width": {
+            "default_value": 240
+        },
+        "machine_height": {
+            "default_value": 270
+        },
+        "machine_depth": {
+            "default_value": 240
+        },
+        "machine_center_is_zero": {
+            "default_value": true
+        },
+        "machine_nozzle_size": {
+            "default_value": 0.4
+        },
+        "material_diameter": {
+            "default_value": 1.75
+        },
+        "machine_nozzle_heat_up_speed": {
+            "default_value": 2
+        },
+        "machine_nozzle_cool_down_speed": {
+            "default_value": 2
+        },
+        "machine_gcode_flavor": {
+            "default_value": "RepRap (Marlin/Sprinter)"
+        },
+        "machine_start_gcode": {
+            "default_value": "G21        ;metric values\nG90        ;absolute positioning\nM107       ;start with the fan off\nG28   ;move to endstops\nG92 E0                  ;zero the extruded length\nG1 F200 E3              ;extrude 3mm of feed stock\nG92 E0                  ;zero the extruded length again\nG1 F{travel_speed}\n;Put printing message on LCD screen\nM117 Printing..."
+        },
+        "machine_end_gcode": {
+            "default_value": ";End GCode\nM104 S0                     ;extruder heater off\nM140 S0                     ;heated bed heater off (if you have it)\nG91                                    ;relative positioning\nG1 E-1 F300                            ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F{travel_speed} ;move Z up a bit and retract filament even more\nG28   ;move to endstop\nM84                         ;steppers off\nG90                         ;absolute positioning"
+        },
+
+        "machine_shape": {
+            "default_value": "elliptic"
+        }
+,            "machine_disallowed_areas": {
+            "default_value": [
+                [[-50,  -115], [ -115,  -115], [-90,  -90]],
+		[[-115, -115], [-115, -50], [-90, -90]],
+                [[50,  -115], [ 115,  -115], [90,  -90]],
+		[[115, -115], [115, -50], [90, -90]],
+                [[-50,  115], [ -115,  115], [-90,  90]],
+		[[-115, 115], [-115, 50], [-90, 90]],
+                [[50,  115], [ 115,  115], [90,  90]],
+		[[115, 115], [115, 50], [90, 90]]
+            ]
+        }
+
+    }
+}
