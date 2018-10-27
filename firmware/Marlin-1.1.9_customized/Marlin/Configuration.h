@@ -550,7 +550,8 @@
   #define DELTA_PRINTABLE_RADIUS 105.0 // mm. Bids: From originak Kossel fw
 
   // Center-to-center distance of the holes in the diagonal push rods.
-  #define DELTA_DIAGONAL_ROD 271.50 // mm. Bids: From originak Kossel fw
+//  #define DELTA_DIAGONAL_ROD 271.50 // mm. Bids: From originak Kossel fw
+#define DELTA_DIAGONAL_ROD 275.60 // mm. Bids: calibrated value for my specific Kossel
 
   // height from z=0 to home position
   #define DELTA_HEIGHT 302.85 // // mm. DaHai: This will be overriden and set in EEPROM when saving Auto Calibrate results
