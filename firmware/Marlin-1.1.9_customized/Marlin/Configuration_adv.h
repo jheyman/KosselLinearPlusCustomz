@@ -196,9 +196,9 @@
  * The fan will turn on automatically whenever any stepper is enabled
  * and turn off after a set period after all steppers are turned off.
  */
-//#define USE_CONTROLLER_FAN // Bids : I have no controller fan setuo. 
+#define USE_CONTROLLER_FAN // Bids : I use a fan connected to FAN1 connector for cooling the steppers 
 #if ENABLED(USE_CONTROLLER_FAN)
-  #define CONTROLLER_FAN_PIN -1         // Set a custom pin for the controller fan. Bids: -1 value to disable, from original kossel fw
+  #define CONTROLLER_FAN_PIN 7         // Set a custom pin for the controller fan. Bids: pin 7 on the Trigorilla board is FAN1 
   #define CONTROLLERFAN_SECS 60          // Duration in seconds for the fan to run after all motors are disabled
   #define CONTROLLERFAN_SPEED 255        // 255 == full speed
 #endif

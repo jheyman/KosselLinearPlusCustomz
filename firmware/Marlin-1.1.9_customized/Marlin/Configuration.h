@@ -76,7 +76,7 @@
 // build by the user have been successfully uploaded into firmware.
 #define STRING_CONFIG_H_AUTHOR "(Bids)" // Who made the changes. Bids: Change if you wish - informational only
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 "1.1.9" // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 "1.1.9 Aug 9th 2019" // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 "Bids'O'KosselLP"         // will be shown during bootup in line 2. Bids - Change if you wish - informational only
 
 /**
@@ -623,9 +623,9 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
-#define X_DRIVER_TYPE  A4988 // Bids: I did not change the stepper driver, and my Kossel Linear plus apparently has those A4988
-#define Y_DRIVER_TYPE  A4988 
-#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  TMC2208_STANDALONE // Bids: updated after upgrading to TMC2208
+#define Y_DRIVER_TYPE  TMC2208_STANDALONE // Bids: updated after upgrading to TMC2208
+#define Z_DRIVER_TYPE  TMC2208_STANDALONE // Bids: updated after upgrading to TMC2208
 #define X2_DRIVER_TYPE A4988
 #define Y2_DRIVER_TYPE A4988
 #define Z2_DRIVER_TYPE A4988
@@ -934,9 +934,9 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR true // DELTA does not invert - DaHai: For TMC2130, you need to reverse the motor connectors
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR true
+#define INVERT_X_DIR false // Bids: toggled from true to false after installing TMC2208
+#define INVERT_Y_DIR false // Bids: toggled from true to false after installing TMC2208
+#define INVERT_Z_DIR false // Bids: toggled from true to false after installing TMC2208
 
 // @section extruder
 
